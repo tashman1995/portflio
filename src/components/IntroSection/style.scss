@@ -1,0 +1,57 @@
+@import "../../Style/main.scss";
+
+.intro {
+  margin-top: 17rem;
+  margin-bottom: 12rem;
+  &__text-wrapper {
+    margin-left: 18vw;
+    width: 60vw;
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  &__button-container {
+    margin-top: 10rem;
+
+    @include center;
+  }
+}
+
+.cv-button {
+  cursor: none;
+  background-color: $color-black;
+  margin-right: 20rem;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 100rem;
+  outline: none;
+  border: none;
+  transform: rotate(-20deg);
+  transition: all 0.4s ease-out;
+
+  &:hover,
+  &:focus {
+    transform: rotate(0deg);
+    background-color: $color-primary;
+  }
+
+  &__content {
+    @include center;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-top: 5rem;
+    width: 20rem;
+    color: $color-secondary;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.1;
+  }
+}

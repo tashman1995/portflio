@@ -1,0 +1,18 @@
+@import "../../Style/main.scss";
+
+.projects {
+  padding: 16rem 8rem 16rem 16rem;
+  background-color: $color-primary;
+
+  &__title {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: right;
+    margin-bottom: 2rem;
+  }
+
+  &__accordian {
+    max-width: 100rem;
+    margin-left: auto;
+  }
+}

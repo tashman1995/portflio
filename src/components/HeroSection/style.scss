@@ -1,0 +1,60 @@
+@import "../../Style/main.scss";
+
+.hero {
+  height: min-content;
+  padding: 0rem 8rem 8rem 16rem;
+  position: relative;
+
+  &__heading-container {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2vw;
+  }
+
+  &__heading {
+    font-size: 9vw;
+    line-height: 1.1;
+    font-weight: 200;
+
+    &--highlight {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}
+
+.hero-image {
+  width: 40vw;
+  height: 50vw;
+  height: min-content;
+  position: absolute;
+  right: 8rem;
+  top: 0;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+    height: min-content;
+    height: 49vw;
+  }
+
+  &__image {
+    width: 40vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &--front {
+      z-index: 3;
+      opacity: 100%;
+    }
+
+    &--back {
+      opacity: 70%;
+      object-fit: cover;
+      
+    }
+  }
+}

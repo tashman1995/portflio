@@ -1,0 +1,60 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:    Phone
+600 - 900px: Tablet Portrait
+900px - 1200px: tablet lanscape
+1200 - 1800px: Normal styles
+1800px +: Big desktop
+
+$breakpoint arguement choices
+- phone
+-tab-port
+-tab-land
+-big-desktop
+
+
+Media Query order
+Base + Typography > general layout + grid > page layout > components
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-tall {
+    @media only screen and (max-width: 30em) {
+      //360px not divided by 16 like the others
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      //900px / 16
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}

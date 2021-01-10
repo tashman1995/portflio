@@ -1,0 +1,63 @@
+@import "../../Style/main.scss";
+
+.nav {
+  padding: 10rem 8rem 8rem 16rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.5rem;
+
+  &__left {
+    display: flex;
+  }
+
+  &__name {
+    font-weight: 400;
+  }
+
+  &__title {
+    margin-left: 10rem;
+  }
+
+  &__projects {
+    cursor: none;
+    display: flex;
+    color: $color-black;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 400;
+
+    &:hover {
+      & .icon {
+        transition: all 0.3s ease-in;
+        background-color: $color-black;
+        & svg {
+          &:last-of-type {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+  margin-left: 1.8rem;
+  border-radius: 100rem;
+  border: 1.5px solid $color-black;
+  background-color: $color-secondary;
+  position: relative;
+
+  & svg {
+    position: absolute;
+    &:last-of-type {
+      opacity: 0;
+      z-index: 2;
+    }
+  }
+
+  @include center;
+}
