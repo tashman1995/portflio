@@ -59,6 +59,14 @@
   }
 
   &__link {
+    cursor: none;
+    text-decoration: none;
+    color: $color-black;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
     &:last-of-type {
       margin-left: 10rem;
     }

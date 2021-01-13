@@ -8,6 +8,7 @@ const Accordion = ({
   content,
   active,
   handleAccordionUpdate,
+  children,
   link,
   githubLink,
 }) => {
@@ -40,20 +41,10 @@ const Accordion = ({
         ref={contentRef}
         style={{ maxHeight: `${setHeight}` }}
         className="accordion__content">
-        <p
-          className="accordion__text"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-        <div className="accordion__links">
-          <a href={`//${link}`} className="accordion__link">
-            Visit Site
-          </a>
-          <a href={`//${githubLink}`} className="accordion__link">
-            View Code
-          </a>
+        {children}
         </div>
       </div>
-    </div>
+
   );
 };
 

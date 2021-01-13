@@ -11,17 +11,17 @@
 
   transition: 150ms ease;
   // transition: all 0.3s ease;
-  
+
   transition-property: opacity, width, height;
 
   &--hidden {
-    border: 3px solid rgba($color-black, 0.6);
     opacity: 0;
   }
 
   &--large {
     width: 6rem;
     height: 6rem;
+    border: 3px solid rgba($color-black, 0.6);
   }
 }
 

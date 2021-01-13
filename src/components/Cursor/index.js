@@ -33,13 +33,18 @@ const Cursor = () => {
 
   const handleHoverEvents = () => {
     // Nav Link
-    const NavLink = document.querySelector(".nav__projects");
-    NavLink.addEventListener("mouseover", () => setNavLinkHovered(true));
-    NavLink.addEventListener("mouseout", () => setNavLinkHovered(false));
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("mouseover", () => setNavLinkHovered(true));
+      link.addEventListener("mouseout", () => setNavLinkHovered(false));
+    });
+
     // CV Button
-    const cvBtn = document.querySelector(".cv-button");
-    cvBtn.addEventListener("mouseover", () => setCvBtnHovered(true));
-    cvBtn.addEventListener("mouseout", () => setCvBtnHovered(false));
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.addEventListener("mouseover", () => setCvBtnHovered(true));
+      button.addEventListener("mouseout", () => setCvBtnHovered(false));
+    });
   };
 
   const onMouseLeave = () => {
