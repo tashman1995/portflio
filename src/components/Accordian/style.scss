@@ -55,7 +55,7 @@
     display: flex;
     justify-content: flex-end;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   &__link {
@@ -70,6 +70,15 @@
     &:last-of-type {
       margin-left: 10rem;
     }
+  }
+
+  &__sample-user {
+    margin-left: auto;
+    // width: max-content;
+  }
+
+  &__user-title {
+    font-weight: bold;
   }
 }
 

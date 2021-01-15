@@ -14,38 +14,38 @@ const Cursor = () => {
   const [cvBtnHovered, setCvBtnHovered] = useState(false);
 
   useEffect(() => {
+    const addEventListeners = () => {
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseenter", onMouseEnter);
+      document.addEventListener("mouseleave", onMouseLeave);
+    };
+
+    const removeEventListeners = () => {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseenter", onMouseEnter);
+      document.removeEventListener("mouseleave", onMouseLeave);
+    };
+
+    const handleHoverEvents = () => {
+      // Nav Link
+      const links = document.querySelectorAll("a");
+      links.forEach((link) => {
+        link.addEventListener("mouseover", () => setNavLinkHovered(true));
+        link.addEventListener("mouseout", () => setNavLinkHovered(false));
+      });
+
+      // CV Button
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseover", () => setCvBtnHovered(true));
+        button.addEventListener("mouseout", () => setCvBtnHovered(false));
+      });
+    };
+
     addEventListeners();
     handleHoverEvents();
     return () => removeEventListeners();
   }, []);
-
-  const addEventListeners = () => {
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseenter", onMouseEnter);
-    document.addEventListener("mouseleave", onMouseLeave);
-  };
-
-  const removeEventListeners = () => {
-    document.removeEventListener("mousemove", onMouseMove);
-    document.removeEventListener("mouseenter", onMouseEnter);
-    document.removeEventListener("mouseleave", onMouseLeave);
-  };
-
-  const handleHoverEvents = () => {
-    // Nav Link
-    const links = document.querySelectorAll("a");
-    links.forEach((link) => {
-      link.addEventListener("mouseover", () => setNavLinkHovered(true));
-      link.addEventListener("mouseout", () => setNavLinkHovered(false));
-    });
-
-    // CV Button
-    const buttons = document.querySelectorAll("button");
-    buttons.forEach((button) => {
-      button.addEventListener("mouseover", () => setCvBtnHovered(true));
-      button.addEventListener("mouseout", () => setCvBtnHovered(false));
-    });
-  };
 
   const onMouseLeave = () => {
     setHidden(true);
@@ -80,7 +80,7 @@ const Cursor = () => {
         } ${cvBtnHovered && "cursor--hidden"}`}
         style={{
           transform: circle.xy.interpolate(
-            (x, y) => `translate3d(${x - 33.5}px,${y - 23}px,0)`
+            (x, y) => `translate3d(${x - 28}px,${y - 18}px,0)`
           ),
         }}></animated.div>
       <animated.div
@@ -89,7 +89,7 @@ const Cursor = () => {
         }`}
         style={{
           transform: dot.xy.interpolate(
-            (x, y) => `translate3d(${x - 18}px,${y - 6}px,0)`
+            (x, y) => `translate3d(${x - 14}px,${y - 4}px,0)`
           ),
         }}></animated.div>
     </>

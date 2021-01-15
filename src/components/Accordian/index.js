@@ -3,15 +3,7 @@ import ArrowIcon from "../Layout/ArrowIcon";
 
 import "./style.scss";
 
-const Accordion = ({
-  title,
-  content,
-  active,
-  handleAccordionUpdate,
-  children,
-  link,
-  githubLink,
-}) => {
+const Accordion = ({ title, active, handleAccordionUpdate, children }) => {
   const [setHeight, setHeightState] = useState("0px");
 
   const contentRef = useRef(null);
@@ -42,9 +34,8 @@ const Accordion = ({
         style={{ maxHeight: `${setHeight}` }}
         className="accordion__content">
         {children}
-        </div>
       </div>
-
+    </div>
   );
 };
 

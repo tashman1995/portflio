@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import Navbar from "./components/Navbar";
@@ -12,15 +12,19 @@ function App() {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  console.log('rerender')
   return (
-    <Router>
+    <Fragment>
       <Cursor />
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Switch>
-        <Route path="/" component={Home} exact />
-      </Switch>
-    </Router>
+      <Router>
+        <Navbar toggle={toggle} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <Switch>
+          <Route path="/" component={Home} exact />
+        </Switch>
+      </Router>
+    </Fragment>
   );
 }
 
