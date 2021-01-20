@@ -1,0 +1,61 @@
+@import "../../Style/main.scss";
+
+.instagram {
+  padding: 20rem 0 0 0;
+  &__headings {
+    grid-column: center-start/ center-end;
+    margin-bottom: 4.8rem;
+  }
+
+  &__images {
+    grid-column: center-start/ center-end;
+    display: grid;
+    grid-gap: 4.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  }
+
+  &__portfolio-link {
+    color: $color-black !important;
+  }
+}
+
+.image {
+  position: relative;
+  height: min;
+  &__info {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include center;
+    background-color: rgba($color-black, 0.6);
+    transition: all 0.5s ease;
+    text-decoration: none;
+    font-size: 2.6rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__file {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__likes,
+  &__comments {
+    @include center;
+    color: $color-secondary;
+
+    &:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+
+    & svg {
+      margin-right: 0.6rem;
+    }
+  }
+}

@@ -1,10 +1,16 @@
 @import "../../Style/main.scss";
 
 .projects {
-  padding: 16rem 8rem 16rem 16rem;
+  padding: 22rem 0;
   background-color: $color-primary;
+  @include respond(small) {
+    @include center;
+ 
+    min-height: 100vh;
+  }
 
   &__title {
+    grid-column: center-start / center-end;
     width: 100%;
     text-transform: uppercase;
     text-align: right;
@@ -12,7 +18,14 @@
   }
 
   &__accordian {
+    grid-column: center-start / center-end;
     max-width: 100rem;
     margin-left: auto;
+    @include respond(medium-large) {
+      grid-column: 3 / center-end;
+    }
+    @include respond(small) {
+      grid-column: 2 / center-end;
+    }
   }
 }

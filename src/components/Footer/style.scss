@@ -1,0 +1,54 @@
+@import "../../Style/main.scss";
+.footer {
+  padding: 16rem 0 8rem 0;
+  @include respond(small) {
+    padding: 8rem 0 8rem 0;
+    font-size: 3rem;
+  }
+
+  &__licensing {
+    grid-column: center-start / span 3;
+    @include respond(small) {
+      grid-column: center-start / center-end;
+      @include center;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__links {
+    grid-column: col-start 6 / center-end;
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(small) {
+      justify-content: center;
+      grid-column: center-start / center-end;
+    }
+    @include respond(tiny) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    list-style: none;
+    @include respond(tiny) {
+      @include center;
+    }
+    &:not(:first-child) {
+      padding-left: 4.8rem;
+      @include respond(tiny) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__link-text {
+    text-decoration: none;
+    color: $color-black;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

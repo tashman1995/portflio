@@ -14,9 +14,9 @@
 
 $breakpoint arguement choices
 - phone
--tab-port
--tab-land
--big-desktop
+-medium
+-large
+-extra-large
 
 
 Media Query order
@@ -24,36 +24,50 @@ Base + Typography > general layout + grid > page layout > components
 */
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == phone-tall {
+  @if $breakpoint == tiny {
     @media only screen and (max-width: 30em) {
       //360px not divided by 16 like the others
       @content;
     }
   }
 
-  @if $breakpoint == phone {
+  @if $breakpoint == small {
     @media only screen and (max-width: 37.5em) {
       //600px
       @content;
     }
   }
 
-  @if $breakpoint == tab-port {
-    @media only screen and (max-width: 56.25em) {
-      //900px / 16
+  @if $breakpoint == medium-small {
+    @media only screen and (max-width: 50em) {
+      //800px / 16
+      @content;
+    }
+  }
+  @if $breakpoint == medium {
+    @media only screen and (max-width: 62.5em) {
+      //1000px / 16
       @content;
     }
   }
 
-  @if $breakpoint == tab-land {
+  @if $breakpoint == medium-large {
     @media only screen and (max-width: 75em) {
       //1200px
       @content;
     }
   }
-  @if $breakpoint == big-desktop {
-    @media only screen and (min-width: 112.5em) {
-      //1800px
+
+  @if $breakpoint == large {
+    @media only screen and (max-width: 87.5em) {
+      //1400px
+      @content;
+    }
+  }
+
+  @if $breakpoint == extra-large {
+    @media only screen and (min-width: 100em) {
+      //1600px
       @content;
     }
   }

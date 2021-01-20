@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import ArrowIcon from "../Layout/ArrowIcon";
+import UseWindowSize from "../UseWindowSize";
 
 import "./style.scss";
+
 
 const Accordion = ({ title, active, handleAccordionUpdate, children }) => {
   const [setHeight, setHeightState] = useState("0px");
@@ -20,7 +22,8 @@ const Accordion = ({ title, active, handleAccordionUpdate, children }) => {
         <div
           className={`accordion__icon ${active && "accordion__icon--rotate"}`}>
           <ArrowIcon
-            scale="1.8"
+            className="icon"
+            scale={UseWindowSize().width > 600 ? "1.8" : "1.2"}
             fill={active ? "#1e1e1e" : "none"}
             strokeColor="#1e1e1e"
             strokeWidth="1px"

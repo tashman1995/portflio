@@ -7,6 +7,8 @@ const Projects = () => {
   const [mvdb, setMvdb] = useState(false);
   const [dolla, setDolla] = useState(false);
   const [greenlight, setGreenlight] = useState(false);
+  const [paymentPortal, setPaymentPortal] = useState(false);
+  const [flashcards, setFlashcards] = useState(false);
 
   const data = [
     {
@@ -35,8 +37,8 @@ const Projects = () => {
       active: mvdb,
       content:
         "A site made using vanilla Javascript, HTML and SCSS that utilises the OMDB api to search and compare movies and tv shows.",
-      githubLink: "",
-      link: "",
+      githubLink: "github.com/tashman1995/movieSite",
+      link: "quiet-savannah-42623.herokuapp.com/",
     },
     {
       title: "Green Light",
@@ -46,6 +48,22 @@ const Projects = () => {
       githubLink: "",
       link: "greenlightpackaging.com/",
     },
+    {
+      title: "Payment Portal",
+      active: paymentPortal,
+      content:
+        "An example payment portal with changing card visual made with vanilla Javascript, HTML and CSS.",
+      githubLink: "github.com/tashman1995/Credit-Card-Details-Form",
+      link: "vast-harbor-25156.herokuapp.com/",
+    },
+    {
+      title: "Flash Cards",
+      active: flashcards,
+      content:
+        "An app that allows creating, editing and deleting double sided flash cards made using Vanilla Javascript, HTML and CSS.",
+      githubLink: "github.com/tashman1995/flashcards",
+      link: "agile-tundra-06367.herokuapp.com/",
+    },
   ];
 
   const handleAccordionUpdate = (accordionId) => {
@@ -53,62 +71,67 @@ const Projects = () => {
     setMvdb(accordionId === "MVDB" ? !mvdb : false);
     setDolla(accordionId === "dolla" ? !dolla : false);
     setGreenlight(accordionId === "Green Light" ? !greenlight : false);
+    setFlashcards(accordionId === "Flash Cards" ? !flashcards : false);
+    setPaymentPortal(accordionId === "Payment Portal" ? !paymentPortal : false);
   };
 
   return (
-    <section className="projects">
-      <h2 className="projects__title">Recent Projects</h2>
-      <div className="projects__accordian">
-        {data.map((project) => {
-          return (
-            <Accordion
-              active={project.active}
-              handleAccordionUpdate={handleAccordionUpdate}
-              title={project.title}>
-              <Fragment>
-                <p
-                  className="accordion__text"
-                  dangerouslySetInnerHTML={{ __html: project.content }}></p>
+    <section className="projects " id="projects">
+      <div className="projects__wrapper u-grid">
+        <h2 className="projects__title">Recent Projects</h2>
+        <div className="projects__accordian">
+          {data.map((project) => {
+            return (
+              <Accordion
+                key={project.title}
+                active={project.active}
+                handleAccordionUpdate={handleAccordionUpdate}
+                title={project.title}>
+                <Fragment>
+                  <p
+                    className="accordion__text"
+                    dangerouslySetInnerHTML={{ __html: project.content }}></p>
 
-                {project.sampleUser && (
-                  <div className="accordion__sample-user">
-                    <p className="accordion__user-title">Sample Login</p>
-                    <p className="accordion__user-text">
-                      <span className="accordion__user-title">
-                        Username: &nbsp;
-                      </span>
-                      {project.sampleUser.userName}
-                    </p>
-                    <p className="accordion__user-text">
-                      <span className="accordion__user-title">
-                        Password: &nbsp;{" "}
-                      </span>{" "}
-                      {project.sampleUser.password}
-                    </p>
-                  </div>
-                )}
-                <div className="accordion__links">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`//${project.link}`}
-                    className="accordion__link">
-                    Visit Site
-                  </a>
-                  {project.githubLink && (
+                  {project.sampleUser && (
+                    <div className="accordion__sample-user">
+                      <p className="accordion__user-title">Sample Login</p>
+                      <p className="accordion__user-text">
+                        <span className="accordion__user-title">
+                          Username: &nbsp;
+                        </span>
+                        {project.sampleUser.userName}
+                      </p>
+                      <p className="accordion__user-text">
+                        <span className="accordion__user-title">
+                          Password: &nbsp;{" "}
+                        </span>{" "}
+                        {project.sampleUser.password}
+                      </p>
+                    </div>
+                  )}
+                  <div className="accordion__links">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href={`//${project.githubLink}`}
+                      href={`//${project.link}`}
                       className="accordion__link">
-                      View Code
+                      Visit Site
                     </a>
-                  )}
-                </div>
-              </Fragment>
-            </Accordion>
-          );
-        })}
+                    {project.githubLink && (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`//${project.githubLink}`}
+                        className="accordion__link">
+                        View Code
+                      </a>
+                    )}
+                  </div>
+                </Fragment>
+              </Accordion>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

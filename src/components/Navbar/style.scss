@@ -1,14 +1,21 @@
 @import "../../Style/main.scss";
 
 .nav {
-  padding: 6rem 8rem 8rem 16rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 2.2rem;
+  padding: 6rem 0;
+
+  @include respond(small) {
+    font-size: 2rem;
+  }
 
   &__left {
+    grid-column: center-start / col-end 5;
     display: flex;
+    align-items: center;
+
+    @include respond(small) {
+      grid-column: center-start / col-end 4;
+    }
   }
 
   &__name {
@@ -17,10 +24,31 @@
 
   &__title {
     margin-left: 10rem;
+
+    @include respond(medium-large) {
+      margin-left: 6rem;
+    }
+
+    @include respond(medium-small) {
+      margin-left: 4rem;
+    }
+
+    @include respond(small) {
+      display: none;
+    }
+  }
+}
+
+.projects-nav {
+  grid-column: col-end 6 / center-end;
+  @include respond(small) {
+    grid-column: col-end 4 / center-end;
   }
 
-  &__projects {
+  &__link {
+    margin-left: auto;
     cursor: none;
+    width: min-content;
     display: flex;
     color: $color-black;
     align-items: center;
@@ -50,6 +78,11 @@
   border: 1.5px solid $color-black;
   background-color: $color-secondary;
   position: relative;
+
+  @include respond(small) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 
   & svg {
     position: absolute;

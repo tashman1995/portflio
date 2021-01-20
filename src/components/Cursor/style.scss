@@ -23,6 +23,10 @@
     height: 60px;
     border: 3px solid rgba($color-black, 0.6);
   }
+
+  &--light {
+    border: 1.5px solid rgba($color-secondary, 0.6);
+  }
 }
 
 .dot {
@@ -39,5 +43,9 @@
 
   &--hidden {
     opacity: 0;
+  }
+
+  &--light {
+    background-color: rgba($color-secondary, 0.6);
   }
 }

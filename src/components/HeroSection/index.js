@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import "./style.scss";
-import portraitBackground from "../../images/portraitbg.jpg";
-import portraitFront from "../../images/portraitfront.png";
-
 
 // Parallax setup
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -29,31 +26,30 @@ const HeroSection = () => {
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
   }));
- 
 
   const onMouseMove = ({ clientX: x, clientY: y }) => {
     set({ xy: calc(x, y) });
   };
   return (
-    <section className="hero">
+    <section className="hero u-grid">
       <div className="hero__heading-container">
         <h1 className="hero__heading">
-          Front End <br />{" "}
-          <span className="hero__heading--highlight">developer</span>
+          I'm Looking Forward <br />{" "}
+          <span className="hero__heading--highlight">To Joining</span>
           <br />
-          based in Cambridge
+          Your Team
         </h1>
       </div>
       <div className="hero-image">
         <div className="hero-image__wrapper">
           <animated.img
             style={{ transform: props.xy.interpolate(trans2) }}
-            src={portraitFront}
+            src={process.env.PUBLIC_URL + "/images/portraitfront.png"}
             alt=""
             className="hero-image__image hero-image__image--front"
           />
           <animated.img
-            src={portraitBackground}
+            src={process.env.PUBLIC_URL + "/images/portraitbg3.jpg"}
             alt=""
             className="hero-image__image hero-image__image--back"
             style={{ transform: props.xy.interpolate(trans1) }}

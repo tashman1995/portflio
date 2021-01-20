@@ -12,6 +12,7 @@ const Cursor = () => {
   const [hidden, setHidden] = useState(false);
   const [navLinkHovered, setNavLinkHovered] = useState(false);
   const [cvBtnHovered, setCvBtnHovered] = useState(false);
+  const [darkSectionHovered, setDarkSectionHovered] = useState(false);
 
   useEffect(() => {
     const addEventListeners = () => {
@@ -39,6 +40,12 @@ const Cursor = () => {
       buttons.forEach((button) => {
         button.addEventListener("mouseover", () => setCvBtnHovered(true));
         button.addEventListener("mouseout", () => setCvBtnHovered(false));
+      });
+      // Dark Sections
+      const darkSections = document.querySelectorAll(".dark");
+      darkSections.forEach((button) => {
+        button.addEventListener("mouseover", () => setDarkSectionHovered(true));
+        button.addEventListener("mouseout", () => setDarkSectionHovered(false));
       });
     };
 
@@ -77,7 +84,9 @@ const Cursor = () => {
       <animated.div
         className={`cursor ${hidden && "cursor--hidden"}  ${
           navLinkHovered && "cursor--large"
-        } ${cvBtnHovered && "cursor--hidden"}`}
+        } ${cvBtnHovered && "cursor--hidden"}
+        ${darkSectionHovered && "cursor--light"}
+        `}
         style={{
           transform: circle.xy.interpolate(
             (x, y) => `translate3d(${x - 28}px,${y - 18}px,0)`
@@ -86,7 +95,8 @@ const Cursor = () => {
       <animated.div
         className={`dot ${hidden && "dot--hidden"} ${
           navLinkHovered && "dot--hidden"
-        }`}
+        }
+        ${darkSectionHovered && "dot--light"}`}
         style={{
           transform: dot.xy.interpolate(
             (x, y) => `translate3d(${x - 14}px,${y - 4}px,0)`

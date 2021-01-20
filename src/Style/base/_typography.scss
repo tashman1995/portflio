@@ -6,6 +6,23 @@ body {
   line-height: 1.7;
   font-size: 2rem;
   @include center;
+}
 
+.secondary-heading {
+  font-size: 7rem;
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 1.8rem;
+  color: $color-black;
 
+  &--light {
+    color: $color-secondary;
+  }
+}
+
+.tertiary-heading {
+    font-size: 2.8rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 1.8rem;
 }

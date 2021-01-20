@@ -1,0 +1,58 @@
+@import "../../Style/main.scss";
+
+.about-me {
+  background-color: $color-black;
+  color: $color-secondary;
+  padding: 20rem 0;
+
+  &__image-container {
+    grid-column: center-start / span 4;
+    @include center;
+
+    @include respond(large) {
+      grid-column: center-start / span 3;
+    }
+
+    @include respond(medium-small) {
+      grid-column: center-start / center-end;
+      margin-bottom: 9.6rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include respond(medium-small) {
+      width: 60%;
+    }
+
+    @include respond(small) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    grid-column: col-end 4 / center-end;
+    margin-left: 4.8rem;
+    line-height: 1.4;
+
+    @include respond(large) {
+      grid-column: col-end 3 / center-end;
+    }
+
+    @include respond(medium-small) {
+      grid-column: col-start 2 / col-end 7;
+      margin-left: 0;
+    }
+    @include respond(small) {
+      grid-column: center-start / center-end;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 1.2rem;
+    @include respond(large) {
+      font-size: 1.8rem;
+    }
+  }
+}
