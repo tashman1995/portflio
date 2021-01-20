@@ -4,7 +4,7 @@ import "./style.scss";
 
 // Parallax setup
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 30}px,0) scale(1.3)`;
+const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 30}px,0) scale(1.2)`;
 const trans2 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0) `;
 
 const HeroSection = () => {
