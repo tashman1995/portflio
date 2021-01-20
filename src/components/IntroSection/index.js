@@ -8,16 +8,17 @@ const IntroSection = () => {
     <section className="intro u-grid">
       <div className="intro__text-wrapper">
         <p className="intro__text">
-          Front end developer currently looking for a position in the
-          Cambridge and London areas. I have experience in HTML, CSS, Javascript
-          and the MERN stack.
+          Front end developer currently looking for a position in the Cambridge
+          and London areas. I have experience in HTML, CSS, Javascript and the
+          MERN stack.
         </p>
       </div>
       <div className="intro__cv-button-container">
-        <Link
+        <a
           className="cv-button cv-button--1"
-          to={process.env.PUBLIC_URL + "/images/TomAshmanCv.pdf"}
-          target="_blank"
+          href={process.env.PUBLIC_URL + "/images/TomAshmanCv.pdf"}
+          arget="_blank"
+          rel="noopener noreferrer"
           download>
           <div className="cv-button__content">
             <ArrowIcon
@@ -32,7 +33,7 @@ const IntroSection = () => {
               <br /> at my CV
             </p>
           </div>
-        </Link>
+        </a>
       </div>
       <div className="intro__email-button-container">
         <a

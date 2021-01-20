@@ -8,11 +8,7 @@ function App() {
   return (
     <Fragment>
       <Cursor />
-      <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-        </Switch>
-      </Router>
+      <Home />
     </Fragment>
   );
 }
