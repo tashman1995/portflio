@@ -42,13 +42,13 @@ const HeroSection = () => {
       </div>
       <div className="hero-image">
         <div className="hero-image__wrapper">
-          <animated.img
+          <img
             style={{ transform: props.xy.interpolate(trans2) }}
             src={process.env.PUBLIC_URL + "/images/portraitfront.png"}
             alt=""
             className="hero-image__image hero-image__image--front"
           />
-          <animated.img
+          <img
             src={process.env.PUBLIC_URL + "/images/portraitbg3.jpg"}
             alt=""
             className="hero-image__image hero-image__image--back"
